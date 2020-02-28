@@ -1,0 +1,13 @@
+{
+  "name": "googleContacts",
+  "version": "1.0.0",
+  "description": "A test repository for the Google's People API",
+  "main": "index.js",
+  "repository": "git@github.com:Guiradi/google-contacts-api.git",
+  "author": "Guiradi <g.ferreira@unesp.br>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "googleapis": "39"
+  }
+}
