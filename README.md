@@ -1,6 +1,5 @@
 # Teste de integração com a Google Contacts API
 
- - Activate the People API at Google's console and download client_secret as credentials.json
- - Add to the credentials.json file, in web object:
+ - Crie uma credencial para um web server (outro), ative a People API no Google console e salve suas credenciais em um arquivo credentials.json para utilizar esse teste.
 
-    "redirect_uris": ["urn:ietf:wg:oauth:2.0:oob", "http://localhost"]
+ - Após o estudo, pude observar que utilizando o parâmetro `requestSyncToken: true` e passando o `syncToken` que chega na resposta como `nextSyncToken`, podemos obter como resposta apenas os contatos modificados e ou adicionados recentemente.
