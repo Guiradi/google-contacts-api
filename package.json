@@ -1,5 +1,5 @@
 {
-  "name": "googleContacts",
+  "name": "google-contacts",
   "version": "1.0.0",
   "description": "A test repository for the Google's People API",
   "main": "index.js",
@@ -7,6 +7,9 @@
   "author": "Guiradi <g.ferreira@unesp.br>",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "start": "node ."
+  },
   "dependencies": {
     "googleapis": "39"
   }

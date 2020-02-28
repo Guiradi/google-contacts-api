@@ -3,7 +3,7 @@ const readline = require('readline');
 const {google} = require('googleapis');
 
 // If modifying these scopes, delete token.json.
-const SCOPES = ['https://www.googleapis.com/auth/calendar.readonly'];
+const SCOPES = ['https://www.googleapis.com/auth/contacts'];
 // The file token.json stores the user's access and refresh tokens, and is
 // created automatically when the authorization flow completes for the first
 // time.
@@ -23,7 +23,7 @@ fs.readFile('credentials.json', (err, content) => {
  * @param {function} callback The callback to call with the authorized client.
  */
 function authorize(credentials, callback) {
-  const {client_secret, client_id, redirect_uris} = credentials.installed;
+  const {client_secret, client_id, redirect_uris} = credentials.web;
   const oAuth2Client = new google.auth.OAuth2(
       client_id, client_secret, redirect_uris[0]);
 
@@ -84,6 +84,9 @@ function listContacts(auth) {
       sortOrder: 'LAST_MODIFIED_DESCENDING'
   }, (err, res) => {
     if (err) console.log(err);
-    console.log(res);
+    // Store the token to disk for later program executions
+    fs.writeFile('response.json', JSON.stringify(res), (err) => {
+      if (err) return console.error(err);
+    });
   });
 }
